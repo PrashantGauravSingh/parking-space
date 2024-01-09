@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:parking_space/Providers/register_parking_provider.dart';
+import 'package:parking_space/Providers/register_space_provider.dart';
 import 'package:parking_space/constant/app_colors.dart';
 import 'package:parking_space/presentation/home.dart';
 import 'package:parking_space/presentation/register_space.dart';
+import 'package:provider/provider.dart';
+import 'presentation/all_registered_space.dart';
 
-void main() {
+
+Future<void> main() async {
   runApp(const MyApp());
 }
 
@@ -13,21 +18,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Parking Space',
-      // on the FirstScreen widget.
-      initialRoute: '/',
-      routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => const Home(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => const RegisterSpace(),
-      },
-      theme: ThemeData(
-        backgroundColor: AppColors.white,
-        primarySwatch: Colors.blue,
-      ),
-      home: const Home(),
-    );
+      return MaterialApp(
+        title: 'Parking Space',
+        // on the FirstScreen widget.
+        initialRoute: '/',
+        routes: {
+          // When navigating to the "/" route, build the FirstScreen widget.
+          '/': (context) => const Home(),
+          // When navigating to the "/second" route, build the SecondScreen widget.
+          '/RegisterSpace': (context) => ChangeNotifierProvider<RegisterParkingProvider>(create: (_) => RegisterParkingProvider(),child: RegisterSpace()),
+          '/AllRegisteredSpace': (context) =>  ChangeNotifierProvider<RegisterSpaceProvider>(create: (_) => RegisterSpaceProvider(),child: AllRegisteredSpace(context: context,)),
+
+        },
+        theme: ThemeData(
+            backgroundColor: AppColors.white,
+            bottomAppBarColor: AppColors.black,
+            appBarTheme: const AppBarTheme(color: AppColors.black,)
+        ),
+      );
   }
 }
