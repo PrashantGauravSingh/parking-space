@@ -49,7 +49,8 @@ class RegisterSpace extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
                     child: TextFormField(
-                      controller:spaceIdController ,
+                      controller:spaceIdController,
+                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                           hintText: 'Space ID',
                           hintStyle: TextStyle(
@@ -93,7 +94,7 @@ class RegisterSpace extends StatelessWidget {
                 ),
                 child: const Center(
                   child:  Text(
-                    'Submit',
+                    AppStrings.submit,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -104,7 +105,7 @@ class RegisterSpace extends StatelessWidget {
               ),
             ),
             data.isLoading?const Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(AppColors.black)),
     ):Container()
 
           ],

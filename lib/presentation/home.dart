@@ -49,8 +49,7 @@ class Home extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/RegisterSpace');
-
+                        Navigator.pushNamed(context, '/BookSlot');
                       },
                       child: Card(
                         elevation: 5,
@@ -70,7 +69,7 @@ class Home extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/DeleteSlot');
                       },
                       child: Card(
                         elevation: 5,
@@ -92,7 +91,7 @@ class Home extends StatelessWidget {
 
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/DeleteSlot');
                       },
                       child: Container(
                         child: Card(
@@ -102,7 +101,7 @@ class Home extends StatelessWidget {
                           child: Center(
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
-                              children:  <Widget>[Image.asset('resources/assets/png/exit.png',height: 50,width: 50),
+                              children:  <Widget>[Image.asset('resources/assets/png/delete_space.png',height: 50,width: 50),
                                 const Padding(
                                 padding:  EdgeInsets.all(8.0),
                                 child: Text('Delete Space'),

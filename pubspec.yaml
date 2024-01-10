@@ -39,6 +39,8 @@ dependencies:
   provider:
   analyzer:
   http:
+  rflutter_alert:
+
 
 dev_dependencies:
   flutter_test:
