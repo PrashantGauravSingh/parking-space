@@ -91,7 +91,7 @@ class Home extends StatelessWidget {
 
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/DeleteSlot');
+                        Navigator.pushNamed(context, '/DeleteSpace');
                       },
                       child: Container(
                         child: Card(

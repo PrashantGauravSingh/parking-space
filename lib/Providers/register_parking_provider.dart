@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:parking_space/Models/register_space_model.dart';
 import 'package:parking_space/core/register_parking_service.dart';
 import 'package:parking_space/core/register_space_service.dart';
+import 'package:parking_space/presentation/widget/show_toast_widget.dart';
 
 class RegisterParkingProvider extends ChangeNotifier {
   final _service = RegisterParkingService();
@@ -15,6 +16,7 @@ class RegisterParkingProvider extends ChangeNotifier {
     final response = await _service.registerParking(registerSpaceModel);
     _getRegisterSpaceModel = response;
     isLoading = false;
+    ToastWidget().showToastWidget(_getRegisterSpaceModel, Colors.green);
     notifyListeners();
   }
 }

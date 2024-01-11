@@ -17,6 +17,7 @@ class RegisterSpace extends StatelessWidget {
     //Method to register parking space
 
     Future<void> _registerParkingSpace() async {
+
       int spaceId=int.parse(spaceIdController.text.trim());
       String spaceName = spaceNameController.text.trim();
 
@@ -33,6 +34,7 @@ class RegisterSpace extends StatelessWidget {
           title:  const Text(AppStrings.parkingRegister,style:  TextStyle(color: AppColors.white),),
         ),
         body:Consumer<RegisterParkingProvider>(builder: (context, data, child) {
+
     return Stack(
           children: <Widget>[
             Container(
